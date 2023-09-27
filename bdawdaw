@@ -1,0 +1,44 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("NemoHubBB", "Midnight")
+
+--MAIN
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
+
+
+MainSection:NewButton("AutoParry With Calculations", "AutoParry with calculations", function()
+getgenv().visualizer = true
+loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/RedCircleBlock"))()
+end)
+
+
+MainSection:NewButton("AutoClicker", "AutoClicker", function()
+getgenv().key = "Hostile"loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/The-telligence/main/MC%20KSystem%202"))()
+end)
+
+
+local Skins = Window:NewTab("Skins")
+local SkinsSection = Skins:NewSection("Skins")
+
+
+SkinsSection:NewButton("Skins", "ButtonInfo", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Dreamnemo1/dsadas/main/yep"))()
+end)
+
+local Player = Window:NewTab("Player")
+local PlayerSection = Player:NewSection("Player")
+
+
+PlayerSection:NewSlider("WalkSpeed", "Increase Player WalkSpeed", 500, 36, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+PlayerSection:NewSlider("JumpPower", "Increase Player JumpPower", 350, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+PlayerSection:NewButton("Fov120", "ButtonInfo", function()
+local FovNumber = 120 --Enter your FOV number here
+local Camera = workspace.CurrentCamera
+Camera.FieldOfView = FovNumber
+end)
